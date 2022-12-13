@@ -1,11 +1,10 @@
-package generation.proyect1;
+package generation.proyecto1;
 
 public class Automovil {
 
 	private String modelo;
 	private String color;
 	private int anio;
-	private String marca;
 	private int chasis;
 	private int velocidadMax;
 	private int velocidadAct;
@@ -13,14 +12,15 @@ public class Automovil {
 	private boolean techoSolar;
 	private int numeroMarchas;
 	private boolean transmisionAutomatica;
-	public int marchaAct;
-
-	public Automovil(String modelo, String color, int anio, String marca, int chasis, int velocidadMax,
-			int velocidadAct, int numeroPuertas, boolean techoSolar, int numeroMarchas, boolean transmisionAutomatica) {
+	private int marchaAct;
+	private Propietario propietario;
+	private Marca marca;
+	
+	public Automovil(String modelo, String color, int anio, int chasis, int velocidadMax,
+			int velocidadAct, int numeroPuertas, boolean techoSolar, int numeroMarchas, boolean transmisionAutomatica, Propietario propietario, Marca marca) {
 		this.modelo = modelo;
 		this.color = color;
 		this.anio = anio;
-		this.marca = marca;
 		this.chasis = chasis;
 		this.velocidadMax = velocidadMax;
 		this.velocidadAct = velocidadAct;
@@ -29,7 +29,16 @@ public class Automovil {
 		this.numeroMarchas = numeroMarchas;
 		this.transmisionAutomatica = transmisionAutomatica;
 		this.marchaAct = 0;
+		this.propietario = propietario;
+		this.marca = marca; 
+	}
 
+	public Propietario getPropietario() {
+		return propietario;
+	}
+
+	public void setPropietario(Propietario propietario) {
+		this.propietario = propietario;
 	}
 
 	public String getModelo() {
@@ -54,14 +63,6 @@ public class Automovil {
 
 	public void setAnio(int anio) {
 		this.anio = anio;
-	}
-
-	public String getMarca() {
-		return marca;
-	}
-
-	public void setMarca(String marca) {
-		this.marca = marca;
 	}
 
 	public int getChasis() {
@@ -119,6 +120,14 @@ public class Automovil {
 	public void setTransmisionAutomatica(boolean transmisionAutomatica) {
 		this.transmisionAutomatica = transmisionAutomatica;
 	}
+	
+	public Marca getMarca() {
+		return marca;
+	}
+
+	public void setMarca(Marca marca) {
+		this.marca = marca;
+	}
 
 	public void cambiarMarcha(){
 		if (marchaAct < numeroMarchas) {
@@ -131,6 +140,7 @@ public class Automovil {
 			marchaAct -= 1;
 		}
 	}
+	
 	public void acelerar() {
 		if (velocidadAct < velocidadMax) {
 			velocidadAct += 1;
@@ -140,5 +150,8 @@ public class Automovil {
 	public void frenar() {
 		velocidadAct = 0; 
 	}
-
+	
+	public void mostrarVolumenGasolina(double gasolina) {
+		System.out.println("Volumen de gasolina: " + gasolina);
+	}
 }

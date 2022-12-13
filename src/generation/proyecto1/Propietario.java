@@ -1,4 +1,4 @@
-package generation.proyect1;
+package generation.proyecto1;
 
 public class Propietario {
 	
@@ -6,18 +6,14 @@ public class Propietario {
 	private String rfc;
 	private String curp;
 	private String edad;
+	private Direccion direccion; 
 	private String fechaNacimiento;
-	private String calle;
-	private String colonia;
-	private String ciudad;
-	private String codigoPostal;
-	
-	public Propietario() {}
 
-	public Propietario(String nombre, String rfc, String curp){ 
+	public Propietario(String nombre, String rfc, String curp, Direccion direccion){ 
 		this.nombre = nombre;
 		this.rfc = rfc;
 		this.curp = curp;
+		this.direccion = direccion;
 	}
 
 	public String getNombre() {
@@ -47,7 +43,6 @@ public class Propietario {
 	public String getEdad() {
 		return edad;
 	}
-
 	
 	public void setEdad(String edad) {
 		this.edad = edad;
@@ -61,37 +56,14 @@ public class Propietario {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-	public String getCalle() {
-		return calle;
+	public Direccion getDireccion() {
+		return direccion;
 	}
 
-	public void setCalle(String calle) {
-		this.calle = calle;
+	public void setDireccion(Direccion direccion) {
+		this.direccion = direccion;
 	}
-
-	public String getColonia() {
-		return colonia;
-	}
-
-	public void setColonia(String colonia) {
-		this.colonia = colonia;
-	}
-
-	public String getCiudad() {
-		return ciudad;
-	}
-
-	public void setCiudad(String ciudad) {
-		this.ciudad = ciudad;
-	}
-
-	public String getCodigoPostal() {
-		return codigoPostal;
-	}
-
-	public void setCodigoPostal(String codigoPostal) {
-		this.codigoPostal = codigoPostal;
-	}
+	
 	
 
 }
