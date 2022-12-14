@@ -9,6 +9,5 @@ public class Proyecto1 {
 		Automovil auto1 = new Automovil("Cherokee Limited", "Black", 2017, 4, 200, 0, 5, false, 5, true, persona1,
 				marca1);
 		auto1.mostrarVolumenGasolina(5);
-		
 	}
 }
